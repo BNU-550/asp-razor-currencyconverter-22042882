@@ -8,18 +8,38 @@ using Microsoft.Extensions.Logging;
 
 namespace name_input.Pages
 {
-	public class IndexModel : PageModel
-	{
-		private readonly ILogger<IndexModel> _logger;
+    public class IndexModel : PageModel
+    {
+        private readonly ILogger<IndexModel> _logger;
 
-		public IndexModel(ILogger<IndexModel> logger)
-		{
-			_logger = logger;
-		}
+        [BindProperty]
+        public String FullName { get; set; }
 
-		public void OnGet()
-		{
+        public IndexModel(ILogger<IndexModel> logger)
+        {
+            _logger = logger;
+        }
 
-		}
-	}
+        public void OnGet()
+        {
+
+        }
+
+        public void OnPost()
+        {
+            this.FullName = Request.Form["name"];
+
+            if (String.IsNullOrWhiteSpace(FullName))
+            {
+                ViewData["Message"] = " ";
+            }
+            else
+            {
+                ViewData["Message"] = FullName + " registered successfully!";
+            }
+
+
+
+        }
+    }
 }

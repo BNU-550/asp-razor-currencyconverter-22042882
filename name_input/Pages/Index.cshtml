@@ -5,7 +5,23 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome to my project page</h1>
-    <h2>made by Matthew testDriver // 22042882</h2>
+    <h1 class="display-4">Matthew Driver's name and email input page</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="float-md-left">
+    <form method="post" class="mx-auto">
+        <div class="form-group">
+            <p>
+                <label for="validationDefault01">Name</label>
+                <input asp-for="FullName" type="text" name="name">
+            </p>
+            <p>
+                <label for="email">Email</label>
+                <input type="email">
+            </p>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <p class="alert-success"> @ViewData["Message"]</p>
+    </form>
 </div>
