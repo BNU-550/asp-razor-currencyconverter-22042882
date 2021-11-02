@@ -1,0 +1,34 @@
+﻿@page
+@model currency_converter.Pages.currencyconverterModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Matthew Driver's currency converter page</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="float-md-left">
+    <form method="post" class="mx-auto">
+        <div class="form-group">
+            <p>
+                <label>Currency</label>
+                <select  asp-for="currency" name="currency" id="currency">
+                    <option value="Pounds">Pounds</option>
+                    <option value="Euros">Euros</option>
+                </select>
+                <input asp-for="amount" type="number">
+            </p>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<div>
+    <p>
+        @ViewData["Result"]
+    </p>
+</div>
+<div>
+
+</div>
